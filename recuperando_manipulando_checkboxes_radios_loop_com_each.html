@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">  
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(()=>{
+
+    //==>>Atividade realizada diretamente no console...<<==
+    //radios
+    $('.sexo:checked').val()//retorna o primeiro elemento checado
+
+    //checkbox: utilizando each para exibir valores
+    //     array                  //indice e valor do array
+    $.each($('.interesse:checked'),(indice, valor) =>{
+      console.log(indice, valor.value)
+    })
+    //O checkbox gera um array de elementos. 
+    
+   
+
+    })
+  </script>
+
+</head>
+<body>
+
+  <p>Nome:</p>
+  <input type="text" name="nome" id="nome">
+  <hr/>
+
+  <p>Onde você nos encontrou?</p>
+  <select id="origem">
+    <option value="0">-- Secione --</option>
+    <option value="1">Google</option>
+    <option value="2">Facebook</option>
+    <option value="3">Rádio</option>
+    <option value="4">Outros meios</option>
+  </select>
+  <br>
+
+  <p>Sexo</p>
+  <input type="radio" name="sexo" class="sexo" value="f">Fem<br>
+  <input type="radio" name="sexo" class="sexo" value="m">Mas<br>
+  <br>
+
+
+  <p>Interesses:</p>
+  <input type="checkbox" name="interesse" class="interesse" value="pp">PHP
+  <input type="checkbox" name="interesse" class="interesse" value="java">Java
+  <input type="checkbox" name="interesse" class="interesse" value="mysql">MySQL
+  <input type="checkbox" name="interesse" class="interesse" value="laravel">Laravel
+
+
+
+</body>
+</html>
