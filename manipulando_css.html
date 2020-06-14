@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery</title>
+		<style>
+			.campo{				
+				border:none;
+				padding: 10px;
+			}
+			.cor1{
+				background-color: orange;
+			}
+
+			.cor2{
+				background-color: red;
+			}
+		</style>
+
+
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script>
+		//Atividade realizada no console
+		//css inline:1par(atributo), 2par(valor_do_abribtuo)
+		$('#topo').css('background-color','orange')
+		
+		//chamando mais atributos
+		$('#topo').css('color','white').css('border','2px solid blue')
+
+		//usando objeto literal-->{'chave':'valor',...}
+		$('#topo').css({'color':'white','background':'orange','padding':'3px 5px','border':'2px solid green'})
+
+
+		//Adicionando classes a  elementos html. Use somente o nome da classe
+		$('input').addClass('campo')
+		$('textarea').addClass('novo')
+
+		//adicionando mais de uma classe
+		$('input').addClass('campo cor1')
+		$('input').addClass('campo cor2')
+
+		//Testando a existencia de uma classe
+		$('input').hasClass('campo')//retorna true ou false
+
+
+		//Removendo uma classe
+		$('')
+
+		</script>
+	</head>
+
+	<body>
+		
+		<div id="topo">
+			<h1>Barra de navegação da aplicação</h1>
+		</div>
+
+		<div>
+			<h3>Contato</h3>
+			<hr />
+
+			<p>Nome:</p>
+			<input type="text" />
+			<br />
+
+			<p>Email:</p>
+			<input type="text"  />
+			<br />
+
+			<p>Mensagem:</p>
+			<textarea class="padrao"></textarea>
+			<br />
+
+			<button type="button">Enviar</button>
+		</div>
+	</body>
+
+</html>
