@@ -144,26 +144,17 @@
 		//------------------------------------------------------
 
 		//**Eventos de formulario
-		$('#nome').focus((e)=>{
-			console.log('Esse elemento html recebeu o foco (nome)')
+		$('#nome, #email').focus((e)=>{
+			console.log('Esse elemento html recebeu o foco ')
 			//target -> alvo do evento
 			$(e.target).addClass('inputFocado')
 		})
 
-		$('#email').focus((e)=>{
-			console.log('Esse elemento html recebeu o foco (email)')
-			$(e.target).addClass('inputFocado')
-		})
 
-		$('#nome').blur((e)=>{
-			console.log('Esse elemento perdeu foco (nome_)')
+		$('#nome, #email').blur((e)=>{
+			console.log('Esse elemento perdeu foco ')
 			$(e.target).removeClass('inputFocado')
-		})
-
-		$('#email').blur((e)=>{
-			console.log('Esse elemento perdeu foco (email_)')
-			$(e.target).removeClass('inputFocado')
-		})
+		})	
 
 
 		$('#opcao').change((e)=>{
