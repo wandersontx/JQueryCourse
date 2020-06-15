@@ -23,22 +23,41 @@
 
 
 				//function / arrow function
-				$('#div1').scroll(function(){
+				/*$('#div1').scroll(function(){
 					//como queremos selecionar o proprio elemento que foi alvo da captura do evento ('#div1'), podemos utilizar a notação 'this'
 					$(this).css('background-color','blue')
-				})
-				
-				/*alternativo|| e-> retorno da função scroll
-				$('#div1').scroll(e =>{
-					//como queremos selecionar o proprio elemento que foi alvo da captura do evento (e.target), podemos utilizar a notação 'this'
-					$(this).css('background-color','blue')
-				})
+				})*/
+
+				//alternativo|| e-> retorno da função scroll
+				$('#div1').scroll(e=>{					
+					$(e.target).css('background-color','blue')
+				})	
+		//-----------------------------------------------
 
 
-					
+		//**Eventos de mouse
 
-				*/
+		//capturado ao pressionar o botão do mouse
+		$('#btn1').mousedown(()=>{
+			$('#div2').css('background-color','green')
+		})		
 
+		//capturado ao soltar o botão do mouse - similar ao evento click[$('#btn1').click(()=>{....]
+		$('#btn1').mouseup(()=>{
+			$('#div2').css('background-color','yellow')
+		})
+			
+		//capturando ao ser realizado um duplo click	
+		$('#btn2').dblclick(()=>{
+			$('#div2').css('background-color','purple')
+		})	
+
+		//proporciona o efeito de arrastar elementos dentro da pagina
+		//captura a posicão do mouse sobre a pagina
+		$('#div2').mousemove((e)=>{		
+			$('#resultado').html('X: '+e.offsetX+', Y:'+e.offsetY)
+
+		})
 
 			})
 		</script>
@@ -59,10 +78,10 @@
 			<hr />
 
 			<h3>Mouse</h3>
-			<button type="button">Clique aqui</button>
-			<button type="button">Clique aqui 2x</button>
-			<div style="background-color: red; width: 80px; height: 50px; margin-top: 10px; margin-bottom: 10px"></div>
-			<span>Resultado do evento sobre a div</span>
+			<button id="btn1" type="button">Clique aqui</button>
+			<button id="btn2" type="button">Clique aqui 2x</button>
+			<div id="div2" style="background-color: red; width: 80px; height: 50px; margin-top: 10px; margin-bottom: 10px"></div>
+			<span>Resultado do evento sobre a div</span><span id="resultado"></span>
 			<hr />
 
 			<h3>Teclado</h3>
