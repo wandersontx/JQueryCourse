@@ -117,6 +117,26 @@
 			$('#resultadoDiv2').html('saiu...')
 			console.log('Div Interna: (saiu)')
 		})
+		//-----------------------------------------------------
+
+		//**Eventos de teclado
+		/*$('#teclado').keydown(()=>{
+			$('#resultadoTecla').html('Tecla pressionada')
+			console.log('Tecla pressionada')
+		})*/
+
+		//Para o caracter permanecer no campo o keyCode deve está entre 97 e 100
+		$('#teclado').keyup((e)=>{
+			if(e.keyCode < 97 || e.keyCode > 100){
+				let txt = $(e.target).val()
+				txt = txt.slice(0,-1)
+				$(e.target).val(txt)
+			}
+			else{
+				console.log(e.keycode)
+			}
+			
+		})
 
 
 	
@@ -154,8 +174,8 @@
 
 			<h3>Teclado</h3>
 			<span>Nome:</span>
-			<input type="text" />
-			<span>Resultado do evento sobre o input</span>
+			<input type="text" id="teclado" />
+			<span id="resultadoTecla">Resultado do evento sobre o input</span>
 			<hr />
 
 			<h3>Formulário</h3>
