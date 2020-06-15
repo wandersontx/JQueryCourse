@@ -16,6 +16,9 @@
 				height: 80px;
 				background-color: blue; 			
 			}
+			.inputFocado{
+				background-color: #ff0000;
+			}
 		</style>
 
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -138,8 +141,47 @@
 			
 		})
 
+		//------------------------------------------------------
 
-	
+		//**Eventos de formulario
+		$('#nome').focus((e)=>{
+			console.log('Esse elemento html recebeu o foco (nome)')
+			//target -> alvo do evento
+			$(e.target).addClass('inputFocado')
+		})
+
+		$('#email').focus((e)=>{
+			console.log('Esse elemento html recebeu o foco (email)')
+			$(e.target).addClass('inputFocado')
+		})
+
+		$('#nome').blur((e)=>{
+			console.log('Esse elemento perdeu foco (nome_)')
+			$(e.target).removeClass('inputFocado')
+		})
+
+		$('#email').blur((e)=>{
+			console.log('Esse elemento perdeu foco (email_)')
+			$(e.target).removeClass('inputFocado')
+		})
+
+
+		$('#opcao').change((e)=>{
+			console.log('A opção foi modificada: ('+$(e.target).val()+')')
+
+		})
+
+		$('#form').submit((e)=>{
+			//evita o comportamento padrão do formulário
+			e.preventDefault()
+			console.log('Formulário enviado...')
+			
+		})
+
+		$('#linkTest').click(e=>{
+			//Bloqueia o comportamento padrão do link
+			e.preventDefault()
+		})
 
 			})//fim captura de eventos
 		</script>
@@ -179,23 +221,24 @@
 			<hr />
 
 			<h3>Formulário</h3>
-			<form>
+			<form  id="form" >
 				<span>Nome:</span>
-				<input type="text" />
+				<input type="text" id="nome" />
 
 				<span>E-mail:</span>
-				<input type="text" />
+				<input type="text" id="email" />
 
 				<span>Motivo do contato:</span>
-				<select>
+				<select id="opcao">
 					<option value="">-- Selecione --</option>
 					<option value="duvida">Dúvida</option>
 					<option value="sugestao">Sugestão</option>
 				</select>
 				
-				<button type="button">Enviar</button>
+				<button type="submit">Enviar</button>
 			</form>
 		</div>
+		<a id="linkTest" href="http://www.udemy.com">Udemy</a>
 	</body>
 
 </html>
